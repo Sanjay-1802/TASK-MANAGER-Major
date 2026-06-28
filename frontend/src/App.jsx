@@ -18,7 +18,7 @@ const [sortBy, setSortBy] = useState("newest");
 
 const fetchTasks = async () => {
 try {
-const response = await fetch("/api/tasks");
+const response = await fetch(`${API_URL}/api/tasks`);
 const data = await response.json();
 
 
@@ -44,7 +44,7 @@ e.preventDefault();
 
 try {
   if (editId) {
-    await fetch(`/api/tasks/${editId}`, {
+    await fetch(`${API_URL}/api/tasks/${editId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -60,7 +60,7 @@ try {
 
     setEditId(null);
   } else {
-    await fetch("/api/tasks", {
+    await fetch(`${API_URL}/api/tasks`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -102,7 +102,7 @@ setEditId(task._id);
 
 const deleteTask = async (id) => {
 try {
-await fetch(`/api/tasks/${id}`, {
+await fetch(`${API_URL}/api/tasks/${id}`, {
 method: "DELETE",
 });
 
@@ -119,7 +119,7 @@ toast.success("✏️ Task Deleted Successfully");
 
 const completeTask = async (id) => {
 try {
-await fetch(`/api/tasks/${id}`, {
+await fetch(`${API_URL}/api/tasks/${id}`, {
 method: "PUT",
 headers: {
 "Content-Type": "application/json",
