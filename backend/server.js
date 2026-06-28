@@ -12,11 +12,16 @@ connectDB();
 
 // Middleware
 app.use(
-cors({
-origin: "http://localhost:5173",
-credentials: true,
-})
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://task-manager-major.vercel.app",
+    ],
+    credentials: true,
+  })
 );
+
+app.use(cors());
 
 app.use(express.json());
 

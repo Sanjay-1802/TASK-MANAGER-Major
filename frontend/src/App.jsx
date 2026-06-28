@@ -3,6 +3,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
 import "./App.css";
 
+const API_URL = "https://task-manager-major.onrender.com";
+
 function App() {
 const [tasks, setTasks] = useState([]);
 const [title, setTitle] = useState("");
